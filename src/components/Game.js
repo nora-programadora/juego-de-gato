@@ -29,7 +29,7 @@ const Game = () => {
 
   const renderMoves = () =>
     history.map((_step, move) => {
-      const destination = move ? `Go to move #${move}` : "Go to Start";
+      const destination = move ? `Movimiento #${move}` : "Comienza";
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
@@ -43,10 +43,10 @@ const Game = () => {
       <Board squares={history[stepNumber]} onClick={handleClick} />
       <div className="info-wrapper">
         <div>
-          <h3>History</h3>
+          <h3>Movimientos</h3>
           {renderMoves()}
         </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
+        <h3>{winner ? "Ganador: " + winner : "Siguiente jugador: " + xO}</h3>
       </div>
     </>
   );
